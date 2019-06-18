@@ -12,7 +12,11 @@ const port = process.env.PORT || 8080
 // Route requires
 const user = require('./routes/user')
 var cors = require('cors');
-app.use(cors());
+var corsOptions = {
+	origin: '*',
+	optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
+  }
+app.use(cors(corsOptions));
 
 // MIDDLEWARE
 app.use(morgan('dev'))
