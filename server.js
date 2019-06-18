@@ -11,6 +11,8 @@ const app = express()
 const port = process.env.PORT || 8080
 // Route requires
 const user = require('./routes/user')
+var cors = require('cors');
+app.use(cors());
 
 // MIDDLEWARE
 app.use(morgan('dev'))
